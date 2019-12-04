@@ -1,0 +1,10 @@
+---
+plugin: libvirt
+#uri: qemu:///session
+include_inactive: true
+networks:
+  - 192.168.122.0/24
+loglevel: debug
+
+compose:
+  ansible_user: '"root"'

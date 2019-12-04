@@ -1,0 +1,17 @@
+- hosts: libvirt
+  gather_facts: false
+  tasks:
+    - delegate_to: localhost
+      debug:
+        msg:
+          - "{{ libvirt.name }}"
+          - "{{ libvirt.os.type['@arch'] }}"
+
+    - delegate_to: localhost
+      debug:
+        msg:
+          - '{{ item.target["@dev"]|default("none") }}'
+          - '{{ item.mac["@address"] }}'
+      loop: "{{ libvirt.devices.interface }}"
+      loop_control:
+        label: '{{ item.mac["@address"] }}'
