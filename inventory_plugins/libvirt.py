@@ -94,7 +94,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
         try:
             self._lv = libvirt.open(self._lv_uri)
-        except libvirt.LibvirtError as err:
+        except libvirt.libvirtError as err:
             raise AnsibleError('Unable to connect to libvirtd: {}'.format(err))
 
     def _lookup_dom_address(self, host, dom):
