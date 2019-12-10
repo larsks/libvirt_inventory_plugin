@@ -76,7 +76,7 @@ METADATA_KEYS = {
 
 class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
-    NAME = 'libvirt'
+    NAME = 'libvirt_inventory'
 
     def verify_file(self, path):
 
