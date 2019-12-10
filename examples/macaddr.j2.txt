@@ -1,0 +1,5 @@
+{% for host in groups.libvirt %}
+{% set devices = hostvars[host].libvirt.devices -%}
+{% set interface = devices.interface[0] -%}
+{{ host }} {{ interface['@type'] }} {{ interface.source['@%s' % interface['@type']] }} {{ interface.mac['@address'] }}
+{% endfor %}

@@ -1,5 +1,5 @@
 ---
-plugin: libvirt
+plugin: libvirt_inventory
 #uri: qemu:///session
 include_inactive: true
 networks:
