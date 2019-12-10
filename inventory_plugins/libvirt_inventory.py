@@ -129,7 +129,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
                 for addr in addresses:
                     selected = addr['addr']
-                    if any(selected in net for net in networks):
+                    if (not networks) or any(selected in net for net in networks):
                         LOG.debug('found address %s for interface %s',
                                   selected,
                                   ifname)
